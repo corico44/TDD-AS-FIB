@@ -1,0 +1,24 @@
+CONSTRUCTORA:
+(1,3) es crea la instancia
+HoraInici negativa (-1,13) espera excepcio DataIniciIncorrecte
+HoraFinal negativa (13,-1) espera excepcio DataFiIncorrecte
+HoraInici mes que 23 (24,13) espera excepcio DataIniciIncorrecte
+HoraFinal mes que 23 (13,24) espera excepcio DataFiIncorrecte
+DataIniciMajorDataFi (14,13) espera excepcio IntervalIncorrecte
+HoraInici i HoraFi iguals (8,8) espera excepcio DataIniciIncorrecte
+
+OPERACIÓ TEMPS:
+HoraFi-HoraIni resta correcte. 
+
+OPERACIÓ PERÍODEDIA:
+Matí: 8 a les 12
+Tarda: 13 fins a les 20 
+Nit: 21 fins a les 7. 
+períodeDiaInterval(08,11) hauria de retornar “Matí” 
+períodeDiaInterval(13,19) hauria de retornar “Tarda” 
+períodeDiaInterval(21,7) hauria de retornar “Nit” 
+períodeDiaInterval(08,22) hauria de retornar “Més d’un període”.
+
+OPERACIÓ HORESMATÍINTERVAL:
+horesMatíInterval(08,11) retorna 4 hores 
+horesMatíInterval(08,22) hauria de retornar una excepció ja que l’interval té hores que no són de matí
