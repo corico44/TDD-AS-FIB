@@ -14,5 +14,6 @@ Implementarem la operacio buy.
 Per fer-la haurem de fer un fake de receiptImpl retornant el valor que ens interessa.
 Pasarem el test i veurem que dona OK.
 
-TO DO TEST: receipt can store values
 
+Iteracio 6:
+Test receipt can store values

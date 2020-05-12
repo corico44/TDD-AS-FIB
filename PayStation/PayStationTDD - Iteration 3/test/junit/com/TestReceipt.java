@@ -1,14 +1,9 @@
 package junit.com;
 
-/** Implementation of the pay station.
+import org.junit.*;
+import static org.junit.Assert.*;
 
-   Responsibilities:
-			
-   1) Accept payment;
-   2) Calculate parking time based on payment;
-   3) Know earning, parking time bought;
-   4) Issue receipts;
-   5) Handle buy and cancel events.
+/** Test cases for the Pay Station system.
  
    This source code is from the book 
      "Flexible, Reliable Software:
@@ -34,15 +29,16 @@ package junit.com;
    limitations under the License.
 
 */
-
-public class ReceiptImpl implements Receipt {
-	private int value;
-	public ReceiptImpl (int minutes) {
-		value = minutes;
-	}
-	  public int value() {
-		  return value;
+public class TestReceipt {
+  Receipt ps;
+  /** Fixture for pay station testing. */
+  
+  @Test
+  public void receiptCanStoreValues() {
+	    rebut = new ReceiptImpl(20);
+	    assertEquals( "Receipt value is 20", 
+	                  20, rebut.value() ); 
 	  }
   
-}
 
+}
