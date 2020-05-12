@@ -67,5 +67,23 @@ public class TestPayStation {
   public void shouldRejectIllegalCoin() throws IllegalCoinException {
     ps.addPayment(17);
   }
+  
+  @Test
+  public void shouldDisplay4MinFor10Cents() throws IllegalCoinException {
+    ps.addPayment(10);
+    assertEquals( "Should display 4 min for 10 cents", 
+                  10 / 5 * 2, ps.readDisplay() );
+    // 25 cent in 5 cent coins each giving 2 minutes parking
+  }
+  
+  @Test
+  public void shouldDisplay1025MinFor35Cents() throws IllegalCoinException {
+    ps.addPayment(10);
+    ps.addPayment(25);
+    assertEquals( "Should display 14 min for 35 cents", 
+                  35 / 5 * 2, ps.readDisplay() );
+    // 25 cent in 5 cent coins each giving 2 minutes parking
+  }
+  
 
 }
