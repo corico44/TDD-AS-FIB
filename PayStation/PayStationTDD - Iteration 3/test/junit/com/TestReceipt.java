@@ -35,9 +35,9 @@ public class TestReceipt {
   
   @Test
   public void receiptCanStoreValues() {
-	    rebut = new ReceiptImpl(20);
+	    ps = new ReceiptImpl(20);
 	    assertEquals( "Receipt value is 20", 
-	                  20, rebut.value() ); 
+	                  20, ps.value() ); 
 	  }
   
 
