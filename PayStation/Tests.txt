@@ -4,6 +4,7 @@ la funcionalitat que valida les monedes introduïdes i per garantir
 que el parquímetre accepta més d'una moneda. Definiu el test i modifiqueu 
 el codi per tal de que el test passi.
 
+<<<<<<< HEAD
 
 Iteració 5: 
 
@@ -14,3 +15,26 @@ Per fer-la haurem de fer un fake de receiptImpl retornant el valor que ens inter
 Pasarem el test i veurem que dona OK.
 
 TO DO TEST: receipt can store values
+=======
+addPayment(10) + addPayment(25) ha de donar 35 minuts
+
+Iteració 5: 
+Escollim el test “buy produces valid receipt”. 
+Llegiu la descripció del que han de fer les operacions que 
+teniu al codi. Definiu un test que invoqui a l'operació buy 
+després de, per exemple, afegir 3 monedes vàlides al parquímetre 
+i comprovi que el value() del rebut generat per l'operació buy 
+retorna 16 minuts. Executeu el test per comprovar que no passa. 
+Ara heu de generar el codi. Aquí es presenta el següent problema: 
+Per tal de que el test passi necessitem implementar l’operació buy 
+i implementar la classe que implementa la interface Receipt. Per 
+on comencem? Discutiu les dues alternatives i penseu quina seria 
+la millor. Us recomano procedir de la següent manera:
+Després d’avaluar les alternatives, implementeu l’operació buy 
+(heu de tenir clar el motiu pel qual es decideix començar per generar 
+el codi de l'operació buy, si no ho teniu clar, consulteu amb la vostra professora) 
+utilitzant el TDD principle Fake It per retornar el rebut (amb el value del rebut
+ que correspongui als 16 minuts comprats).
+En apuntem a la nostra llista de tests pendents un nou test per generar el 
+codi de la classe ReceiptImpl, per exemple, el test “receipt can store values”.
+>>>>>>> 70788630a9891cfbc3d777a238032359523a4523
