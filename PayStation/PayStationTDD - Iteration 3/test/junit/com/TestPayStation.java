@@ -96,5 +96,28 @@ public class TestPayStation {
     // 25 cent in 5 cent coins each giving 2 minutes parking
   }
   
+  @Test
+  public void BuyFor100Cents() throws IllegalCoinException {
+	ps.addPayment(25);
+	ps.addPayment(25);
+	ps.addPayment(25);
+	ps.addPayment(25);
+	Receipt rebut = ps.buy();
+    assertEquals( "El ticket te una durada de 40 minuts", 
+                  100 / 5 * 2, rebut.value());
+    // 25 cent in 5 cent coins each giving 2 minutes parking
+  }
+  
+  @Test
+  public void ClearingAfterBuyOperation() throws IllegalCoinException {
+	ps.addPayment(25);
+	ps.buy();
+    assertEquals( "El ticket te una durada de 0 minuts", 
+                  0, ps.readDisplay());
+    // 25 cent in 5 cent coins each giving 2 minutes parking
+  }
+  
+  
+  
 
 }

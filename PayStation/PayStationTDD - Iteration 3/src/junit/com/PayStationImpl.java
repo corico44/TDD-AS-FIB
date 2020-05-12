@@ -54,7 +54,8 @@ public class PayStationImpl implements PayStation {
     return insertedSoFar / 5 * 2;
   }
   public Receipt buy() {
-    ReceiptImpl rebut = new ReceiptImpl(16);
+    ReceiptImpl rebut = new ReceiptImpl(readDisplay());
+    insertedSoFar = 0;
     return rebut;
   }
   public void cancel() {
