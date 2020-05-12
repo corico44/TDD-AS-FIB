@@ -85,5 +85,16 @@ public class TestPayStation {
     // 25 cent in 5 cent coins each giving 2 minutes parking
   }
   
+  @Test
+  public void buyproducesvalidreceipt() throws IllegalCoinException {
+	ps.addPayment(5);
+	ps.addPayment(10);
+	ps.addPayment(25);
+	Receipt rebut = ps.buy();
+    assertEquals( "El ticket te una durada de 16 minuts", 
+                  40 / 5 * 2, rebut.value());
+    // 25 cent in 5 cent coins each giving 2 minutes parking
+  }
+  
 
 }
