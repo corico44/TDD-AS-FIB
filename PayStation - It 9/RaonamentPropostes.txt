@@ -1,0 +1,33 @@
+Primera proposta
+Crear una funció de tarifa segons ciutat. Fer una variable a la funció addpayment i anar sumant
+els minuts cada cop que s'afegeix més diners. 
+Enviar aquesta variable a la funció de calcul tarifa i realitzar, segons si son 60 min,
+120 min o 240 min o més, el calcul corresponent.
+
+Primera hora: $1,5 (5 cents gives 2 minutes) -> 5/5*2
+Segona hora: $2 (5 cents gives 1,5 minutes) -> 5/5*1.5
+Tercera i successives hores: $3 (5 cents gives 1 minute) -> 5/5*1
+
+Inconvenients: És poc escalable si s'aumentessin el número de casos respecte el canvi de 
+minuts segons el nombre d'hores.
+Avantatges: És esquematic i més visual. També al tindre una funció separada s'aïlla el cas.
+
+
+Segona proposta
+Fer una nova funció la qual tingui com a parametre d'entrada els diners totals que s'han introduit i,
+segons les relacions següents, retornar els minuts corresponents. 
+1h - 150 c : 60 min
+2h - 200 c : 60 min
+3h - 300 c : 60 min
+Inconvenients: No pots saber fins a quina hora 
+Avantatges:
+
+
+Tercerca proposta
+Inconvenients:
+Avantatges:
+
+
+Quarta proposta
+Inconvenients:
+Avantatges:
