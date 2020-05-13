@@ -1,33 +1,33 @@
 Primera proposta
-Crear una funció de tarifa segons ciutat. Fer una variable a la funció addpayment i anar sumant
-els minuts cada cop que s'afegeix més diners. 
-Enviar aquesta variable a la funció de calcul tarifa i realitzar, segons si son 60 min,
-120 min o 240 min o més, el calcul corresponent.
-
+Crear una subclasse que es digui PayStationImplBoston i crear una funció per 
+modificar el comportament del calcul del temps que seria el següent:
 Primera hora: $1,5 (5 cents gives 2 minutes) -> 5/5*2
 Segona hora: $2 (5 cents gives 1,5 minutes) -> 5/5*1.5
 Tercera i successives hores: $3 (5 cents gives 1 minute) -> 5/5*1
 
-Inconvenients: És poc escalable si s'aumentessin el número de casos respecte el canvi de 
-minuts segons el nombre d'hores.
-Avantatges: És esquematic i més visual. També al tindre una funció separada s'aïlla el cas.
+Inconvenients: S'ha de crear una subclasse nova.
+Avantatges: És escalable afegir més ciutats i no cal modificar la classe que ja teniem.
 
 
 Segona proposta
-Fer una nova funció la qual tingui com a parametre d'entrada els diners totals que s'han introduit i,
-segons les relacions següents, retornar els minuts corresponents. 
-1h - 150 c : 60 min
-2h - 200 c : 60 min
-3h - 300 c : 60 min
-Inconvenients: No pots saber fins a quina hora 
-Avantatges:
+Només tindre un PayStation que tindria una classe Strategy que fos una interficie
+amb dos fills per implementar les dues formes de calcular el temps de les dues estrategies 
+segons si es Nova York o Boston. 
+
+Inconvenients: S'ha de crear la classe Strategy per poder dur a terme els diferents calculs
+Avantatges: Requereix menys codi respecte la primera proposta.
 
 
-Tercerca proposta
-Inconvenients:
-Avantatges:
+Tercera proposta
+Similar a la primera proposta pero crear dues classes diferents, una per Nova York i una per
+Boston (abstractes). No ficar la de Nova York com a default.
+
+Inconvenients: S'han de crear dues subclasses i s'hereda massa codi a les noves classes
+només per fer el calcul dels minuts. 
+Avantatges: És molt més escalable i diferencia millor les dues ciutats.
 
 
 Quarta proposta
-Inconvenients:
-Avantatges:
+Ficar un strategy en el strategy de Boston. 
+Inconvenients: És fan moltes classes per només una funcionalitat.
+Avantatges: És molt escalable per poder crear próxims calculs.
