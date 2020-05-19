@@ -31,10 +31,12 @@ import static org.junit.Assert.*;
 */
 public class TestPayStation {
   PayStation ps;
+
   /** Fixture for pay station testing. */
   @Before
   public void setUp() {
-    ps = new PayStationImpl();
+	RateStrategy rs = new LinearRateStrategy();
+    ps = new PayStationImpl(rs);
   }
 
   /**
