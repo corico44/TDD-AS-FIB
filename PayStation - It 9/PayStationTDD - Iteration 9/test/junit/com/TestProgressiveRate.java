@@ -37,22 +37,46 @@ public class TestProgressiveRate {
 	    ps.addPayment(25);
 	    ps.addPayment(25);
 	    ps.addPayment(25);
-	    ps.addPayment(5);
-	    assertEquals( "Should display 61 min for 155 cents", 
-	                 61, ps.readDisplay() );
+	    ps.addPayment(25);
+	    ps.addPayment(25);
+	    ps.addPayment(25);
+	    ps.addPayment(25);
+	    ps.addPayment(25);
+	    ps.addPayment(25);
+	    ps.addPayment(25);
+	    ps.addPayment(25);
+	    assertEquals( "Should display 120 min for 350 cents", 
+	                 120, ps.readDisplay() );
 	  }
 	  
-	  @Test
-	  public void segonaHoraAmb25() throws IllegalCoinException {
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    assertEquals( "Should display 67 min for 175 cents", 
-	    		150 / 5 * 2 + 25 / 10*3, ps.readDisplay() );  
+	 @Test
+	  public void terceraHoraAmb25() throws IllegalCoinException {
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+		    ps.addPayment(25);
+	    assertEquals( "Should display 180 min for 650 cents", 
+	    		180, ps.readDisplay() );  
 	  }
 
 }

@@ -9,7 +9,7 @@ public class ProgressiveRateStrategy implements RateStrategy {
 			return insertedSoFar/5*2;
 		}
 		else
-			return (insertedSoFar-150)/10*3 + 60;
+			return (insertedSoFar-150)*3/10 + 60;
 			
 	}
 
