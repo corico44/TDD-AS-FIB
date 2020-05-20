@@ -38,6 +38,7 @@ package junit.com;
 public class PayStationImpl implements PayStation {
   private int insertedSoFar;
   private int timeBought;
+  private PayStationFactory payfact;
 
   /** the strategy for rate calculations */
   private RateStrategy rateStrategy;
@@ -46,8 +47,10 @@ public class PayStationImpl implements PayStation {
       rate calculation strategy.
       @param rateStrategy the rate calculation strategy to use
   */
-  public PayStationImpl( RateStrategy rateStrategy ) {
-    this.rateStrategy = rateStrategy;
+  public PayStationImpl(PayStationFactory ps) {
+    //this.rateStrategy = rateStrategy;
+    payfact = ps;
+    rateStrategy = payfact.createStrategy();
   }
 
   public void addPayment( int coinValue ) 
@@ -60,13 +63,13 @@ public class PayStationImpl implements PayStation {
       throw new IllegalCoinException("Invalid coin: "+coinValue);
     }
     insertedSoFar += coinValue;
-    timeBought = rateStrategy.calculateTime(insertedSoFar);
+    timeBought =  rateStrategy.calculateTime(insertedSoFar); //es podria millorar
   }
   public int readDisplay() {
-    return timeBought;
+    return timeBought; 
   }
   public Receipt buy() {
-    Receipt r = new StandardReceipt(timeBought);
+    Receipt r = payfact.createRebut(timeBought);
     reset();
     return r;
   }
