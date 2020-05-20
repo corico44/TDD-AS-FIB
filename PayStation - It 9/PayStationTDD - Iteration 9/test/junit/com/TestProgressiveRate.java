@@ -6,77 +6,39 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestProgressiveRate {
-	  PayStation ps;
-
-	  /** Fixture for pay station testing. */
+	/** Fixture for pay station testing. */
+	
+	  RateStrategy rs;
 	  @Before
 	  public void setUp() {
-		RateStrategy rs = new ProgressiveRateStrategy();
-	    ps = new PayStationImpl(rs);
+		rs = new ProgressiveRateStrategy();
+
 	  }
 	  
 	  @Test
 	  public void primeraHoraAmb5() throws IllegalCoinException {
-	    ps.addPayment(5);
 	    assertEquals( "Should display 2 min for 5 cents", 
-	                  5 / 5 * 2, ps.readDisplay() );
+	                  2, rs.calculaTime(5) );
 	  }
 	  
 	  @Test
 	  public void primeraHoraAmb10() throws IllegalCoinException {
-	    ps.addPayment(10);
 	    assertEquals( "Should display 4 min for 10 cents", 
-	                  10 / 5 * 2, ps.readDisplay() );
+	                  4, rs.calculaTime(10));
 	  }
 	  
 	  @Test
-	  public void segonaHoraAmb5() throws IllegalCoinException {
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
-	    ps.addPayment(25);
+	  public void segonaHora() throws IllegalCoinException {
 	    assertEquals( "Should display 120 min for 350 cents", 
-	                 120, ps.readDisplay() );
+	                 120, rs.calculaTime(350) );
 	  }
 	  
-	 @Test
-	  public void terceraHoraAmb25() throws IllegalCoinException {
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
-		    ps.addPayment(25);
+	@Test
+	  public void terceraHora() throws IllegalCoinException {
 	    assertEquals( "Should display 180 min for 650 cents", 
-	    		180, ps.readDisplay() );  
+	    		180,rs.calculaTime(650) );  
 	  }
+
+	  
 
 }
